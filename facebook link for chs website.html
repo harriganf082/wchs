@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Citrus County School School District</title>
+<style>
+.text3 {
+	FONT-SIZE: 12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+</style>
+<script language="JavaScript"> 
+<!--
+
+function getParameter(name)
+{  
+	name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	var regexS = "[\\?&]"+name+"=([^&#]*)";  
+	var regex = new RegExp( regexS );  
+	var results = regex.exec( window.location.href );  
+	
+	if( results == null )    
+		return "";  
+	else    
+		return results[1];
+}
+
+function decode(encodedItem) 
+{
+	return decodeURIComponent(encodedItem.replace(/\+/g,  " "));
+}
+
+
+function displaySections()
+{
+	if(getParameter('ldu') == '1')
+	{
+
+		document.getElementById('loginDifferentUser').innerHTML = '<input type=\"button\" value=\"Login As Different User\" onClick=\"javascript:openSessionInNewWindow();\">'
+	}
+	
+	if(getParameter('re') == '1')
+	{
+		document.getElementById('exception1').innerHTML = 'Request An Exception';
+		document.getElementById('exception2').innerHTML = 'Reason:';
+		document.getElementById('exception3').innerHTML = '<textarea id="rem2" name=\"rem2\" rows=\"3\" cols=\"40\"></textarea>';
+		document.getElementById('exception4').innerHTML = '<a href=\"javascript:requestOverride();\" class=\"button\" onClick=\"this.blur();\"><span>Request Exception</span></a>';
+	}
+
+	document.getElementById('url').innerHTML = decode(getParameter('bu'));
+	document.getElementById('description').innerHTML = decode(getParameter('bc'));
+	document.getElementById('groupNumber').innerHTML = decode(getParameter('fp'));
+	document.getElementById('ipAddress').innerHTML = decode(getParameter('ip'));
+	document.getElementById('customText').innerHTML = decode(getParameter('ct'));
+}
+ 
+function requestOverride()
+{	
+	document.forms[0].fullUrl.value = decode(getParameter('bu'));
+	document.forms[0].button.value = 'requestException';
+	document.forms[0].rem.value = document.getElementById("rem2").value;
+	document.forms[0].action = 'http://' + getParameter('ibip') + '/page_block_submit';
+	document.forms[0].submit();
+}
+ 
+function openSessionInNewWindow()
+{
+	var newWindow = window.open('http://' + getParameter('ibip') + '/InternetAccessWindow.html','iBossSessionWindow','toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, width=625, height=511');
+	newWindow.focus();
+	return false;
+} 
+
+// -->
+</script>
+</head>
+<body bgcolor="#000000" topmargin="0" onLoad="javascript:displaySections();">
+<center>
+  <table cellpadding="0" cellspacing="0" width="899">
+    <tr>
+      <td height="133">
+	  <img alt="Access Restricted" height="194" src="images/restricted.jpg" width="899" /></td>
+    </tr>
+    <tr>
+      <td background="images/citrus/middle.gif" height="130" align="left"><table cellpadding="0" cellspacing="0" width="100%" align="left" background="images/citrus/middle.gif">
+      <tr><td colspan="100%" height="20"></td></tr>
+                            <tr>
+                              <td width="5%">&nbsp;</td>
+                              <td class="text3" width="90%">Access to the requested site has been restricted  due to its contents.</td>
+                              <td width="5%">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td height="40" width="5%"></td>
+                              <td class="text3" width="90%"><span id="customText"></span></td>
+                              <td width="5%"></td>
+                            </tr>
+                            <tr>
+                              <td height="50" width="5%">&nbsp;</td>
+                              <td class="text3" width="90%"><table class="text3" cellpadding="0" cellspacing="0" width="100%" align="left">
+                                  <tr>
+                                    <td width="90%"><strong>URL/Content: </strong><span id="url"></span></td>
+                                    <td width="10%"></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="90%"><strong>Description: </strong><span id="description"></span></td>
+                                    <td width="10%"></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="90%"><strong>Group Number: </strong><span id="groupNumber"></span></td>
+                                    <td width="10%"></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="90%"><strong>Ip Address: </strong><span id="ipAddress"></span></td>
+                                    <td width="10%"></td>
+                                  </tr>
+                                </table></td>
+                              <td width="5%">&nbsp;</td>
+                            </tr>
+<tr>
+                        <td align="center" height="20" colspan="100%"><span id="loginDifferentUser"></span></td>
+          </tr>
+                          
+                            <tr>
+                        <td align="center" height="250" colspan="100%">
+						<img alt="Attention" height="442" src="images/Attention_sm.png" width="512" /></td>
+          </tr>
+                            </table></td>
+    </tr>
+    <tr>
+      <td height="105"><img src="images/citrus/bottom.gif" width="899" height="105" /></td>
+    </tr>
+  </table>
+</center>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-color: #9F9045;
+	color: #050101;
+	-webkit-box-shadow: 2px 0px;
+	box-shadow: 2px 0px;
+	text-align: center;
+}
